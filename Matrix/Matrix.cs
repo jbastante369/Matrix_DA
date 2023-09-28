@@ -47,9 +47,7 @@ namespace Matrix
 
         public void turnoNeo()
         {
-            int latitud = 0;
-            int longitud = 0;
-            Utilidades.localizacionDeNeo(this.matrix,ref latitud, ref longitud);
+            Neo.moverNeo(this.matrix);
         }
     }
 }

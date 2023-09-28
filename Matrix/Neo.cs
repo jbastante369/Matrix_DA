@@ -42,6 +42,34 @@ namespace Matrix
             }
         }
 
+        public static void moverNeo(Personaje[,] matrix )
+        {
+            Random rand = new Random();
+            int latitud = 0;
+            int longitud = 0;
+            int y, x;
+            Utilidades.localizacionDeNeo(matrix, ref latitud, ref longitud);
+            Neo neo = (Neo)matrix[latitud,longitud];
+            
+            y = rand.Next(matrix.GetLength(0));
+            x = rand.Next(matrix.GetLength(0));
+            neo.Latitud = y;
+            neo.Longitud = x;
+
+            if (matrix[y,x] is null)
+            {
+                matrix[y,x] = neo;
+                matrix[latitud, longitud] = null;
+            }
+            else
+            {
+                matrix[x,y].Latitud = latitud;
+                matrix[x,y].Longitud = longitud;
+                matrix[latitud,longitud] = matrix[y,x];
+                matrix[y,x] = neo;
+            }
+        }
+
         public override string ToString()
         {
             return base.ToString() + "\n" +

@@ -2,12 +2,14 @@
 using System.Resources;
 using Matrix;
 
-MatrixP matrix = MatrixFactory.CreateMatrix(15);
+MatrixP matrix = MatrixFactory.CreateMatrix(2);
 
 
-init(ref matrix);
-static void init(ref MatrixP matrix)
+init(matrix);
+static void init(MatrixP matrix)
 {
     Utilidades.mostrarLaMatrix(matrix);
     matrix.turnoNeo();
+    Console.WriteLine(" ");
+    Utilidades.mostrarLaMatrix(matrix);
 }
