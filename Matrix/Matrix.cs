@@ -47,6 +47,9 @@ namespace Matrix
 
         public void turnoNeo()
         {
+            Neo.renacerPersonaje(this.matrix);
+            Utilidades.mostrarLaMatrix(this);
+            Console.WriteLine(" ");
             Neo.moverNeo(this.matrix);
         }
     }
