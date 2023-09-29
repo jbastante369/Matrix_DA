@@ -44,26 +44,52 @@ namespace Matrix
 
             if (!Utilidades.smithCercaDeNeo(matrix))
             {
+                
                 do
                 {
-                    if (smith.Latitud >= neo.Latitud && smith.Longitud < neo.Longitud)
+                    matrix[smith.Latitud, smith.Longitud] = null;
+                    if (smith.Latitud > neo.Latitud && smith.Longitud < neo.Longitud)
                     {
                         smith.Latitud--;
                         smith.Longitud++;
                     }
-                    else if (smith.Latitud < neo.Latitud && smith.Longitud <= neo.Longitud)
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud > neo.Longitud)
+                    {
+                        smith.Latitud++;
+                        smith.Longitud--;
+                    }
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud < neo.Longitud)
                     {
                         smith.Latitud++;
                         smith.Longitud++;
                     }
                     else if (smith.Latitud > neo.Latitud && smith.Longitud > neo.Longitud)
                     {
-
-                    }
-                    else if (smith.Latitud < neo.Latitud && smith.Longitud > neo.Longitud)
+                        smith.Latitud--;
+                        smith.Longitud--;
+                    } 
+                    else if (smith.Latitud > neo.Latitud && smith.Longitud < neo.Longitud)
                     {
-
+                        smith.Latitud++;
+                        smith.Longitud++;
                     }
+                    else if (smith.Latitud <= neo.Latitud && smith.Longitud > neo.Longitud)
+                    {
+                        smith.Latitud++;
+                        smith.Longitud--;
+                    }
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud <= neo.Longitud)
+                    {
+                        smith.Latitud++;
+                        smith.Longitud--;
+                    }
+                    else if (smith.Latitud > neo.Latitud && smith.Longitud >= neo.Longitud)
+                    {
+                        smith.Latitud--;
+                        smith.Longitud++;
+                    }
+
+                    matrix[smith.Latitud, smith.Longitud] = smith;
                 } while (!Utilidades.smithCercaDeNeo(matrix));
                 
             }
