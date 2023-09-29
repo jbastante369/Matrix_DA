@@ -17,7 +17,7 @@ namespace Matrix
 
 
 
-            return new Smith(NOMBRE, EDAD, 0, 0, ciudad[rand.Next(ciudad.Length)], rand.Next(101));
+            return new Smith(NOMBRE, EDAD, 0, 0, ciudad[rand.Next(ciudad.Length)], 100);
         }
     }
 }

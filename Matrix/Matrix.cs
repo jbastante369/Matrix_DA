@@ -52,5 +52,10 @@ namespace Matrix
             Console.WriteLine(" ");
             Neo.moverNeo(this.matrix);
         }
+
+        public void turnoSmith()
+        {
+            Smith.moverSmith(this.matrix);
+        }
     }
 }

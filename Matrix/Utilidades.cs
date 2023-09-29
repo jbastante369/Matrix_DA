@@ -52,6 +52,48 @@ namespace Matrix
             }
         }
 
+        public static void localizacionDeSmith(Personaje[,] matrix, ref int latitud, ref int longitud)
+        {
+            bool encontrado = false;
+            for (int i = 0; i < matrix.GetLength(0) && !encontrado; i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1) && !encontrado; j++)
+                {
+                    if (matrix[i, j] is Smith)
+                    {
+                        latitud = i;
+                        longitud = j;
+                        encontrado = true;
+                    }
+                }
+            }
+        }
+
+        public static bool smithCercaDeNeo(Personaje[,] matrix)
+        {
+            bool cerca = false;
+            int latitud = 0;
+            int longitud = 0;
+            Utilidades.localizacionDeNeo(matrix, ref latitud, ref longitud);
+            Neo neo = (Neo)matrix[latitud, longitud];
+            for (int i = latitud - 1; i <= latitud + 1 && !cerca; i++)
+            {
+
+                for (int j = longitud - 1; j <= longitud + 1 && !cerca; j++)
+                {
+                    if (!(i < 0 || i > matrix.GetLength(0) - 1 || j < 0 || j > matrix.GetLength(1) - 1))
+                    {
+                        if (matrix[i, j] is Smith)
+                        {
+                            cerca = true;
+                        }
+
+                    }
+                }
+            }
+            return cerca;
+        }
+
     }
 
 

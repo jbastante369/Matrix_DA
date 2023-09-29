@@ -28,6 +28,50 @@ namespace Matrix
             }
         }
 
+        public static void moverSmith(Personaje[,] matrix)
+        {
+            Random rand = new Random();
+            int latitud_Smith = 0;
+            int longitud_Smith = 0;
+            int latitud_Neo = 0;
+            int longitud_Neo = 0;
+            int y, x;
+            Utilidades.localizacionDeNeo(matrix, ref latitud_Neo, ref longitud_Neo);
+            Neo neo = (Neo)matrix[latitud_Neo, longitud_Neo];
+            Utilidades.localizacionDeSmith(matrix, ref latitud_Smith, ref longitud_Smith);
+            Smith smith = (Smith)matrix[latitud_Smith, longitud_Smith];
+
+
+            if (!Utilidades.smithCercaDeNeo(matrix))
+            {
+                do
+                {
+                    if (smith.Latitud >= neo.Latitud && smith.Longitud < neo.Longitud)
+                    {
+                        smith.Latitud--;
+                        smith.Longitud++;
+                    }
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud <= neo.Longitud)
+                    {
+                        smith.Latitud++;
+                        smith.Longitud++;
+                    }
+                    else if (smith.Latitud > neo.Latitud && smith.Longitud > neo.Longitud)
+                    {
+
+                    }
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud > neo.Longitud)
+                    {
+
+                    }
+                } while (!Utilidades.smithCercaDeNeo(matrix));
+                
+            }
+
+
+            Console.WriteLine(Math.Max(Math.Abs(latitud_Neo-latitud_Smith),Math.Abs(longitud_Neo-longitud_Smith)));
+        }
+
         public override string ToString()
         {
             return base.ToString() + "\n" +

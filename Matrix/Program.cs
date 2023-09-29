@@ -2,7 +2,7 @@
 using System.Resources;
 using Matrix;
 
-MatrixP matrix = MatrixFactory.CreateMatrix(5);
+MatrixP matrix = MatrixFactory.CreateMatrix(3);
 
 
 init(matrix);
@@ -12,4 +12,5 @@ static void init(MatrixP matrix)
     Console.WriteLine(" ");
     matrix.turnoNeo();
     Utilidades.mostrarLaMatrix(matrix);
+    matrix.turnoSmith();    
 }

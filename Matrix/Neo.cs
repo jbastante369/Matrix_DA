@@ -87,7 +87,6 @@ namespace Matrix
                     
                     for (int j = longitud - 1; j <= longitud + 1 && !renace; j++)
                     {
-                        Console.WriteLine(i +","+ j);
                         if (!(i < 0 || i > matrix.GetLength(0) - 1 || j < 0 || j > matrix.GetLength(1) - 1))
                         {
                             if (matrix[i,j] is null)
