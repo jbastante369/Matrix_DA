@@ -2,7 +2,7 @@
 using System.Resources;
 using Matrix;
 
-MatrixP matrix = MatrixFactory.CreateMatrix(7);
+MatrixP matrix = MatrixFactory.CreateMatrix(6);
 
 
 init(matrix);

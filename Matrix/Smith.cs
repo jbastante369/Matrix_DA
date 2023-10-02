@@ -68,25 +68,58 @@ namespace Matrix
                         smith.Latitud--;
                         smith.Longitud--;
                     } 
-                    else if (smith.Latitud > neo.Latitud && smith.Longitud < neo.Longitud)
+                    else if (smith.Latitud == neo.Latitud && smith.Longitud < neo.Longitud)
                     {
-                        smith.Latitud++;
-                        smith.Longitud++;
+                        if (smith.Latitud == matrix.GetLength(1) - 1)
+                        {
+                            smith.Latitud--;
+                            smith.Longitud++;
+                        }
+                        else
+                        {
+                            smith.Latitud++;
+                            smith.Longitud++;
+                        }
+                        
                     }
-                    else if (smith.Latitud <= neo.Latitud && smith.Longitud > neo.Longitud)
+                    else if (smith.Latitud == neo.Latitud && smith.Longitud > neo.Longitud)
                     {
-                        smith.Latitud++;
-                        smith.Longitud--;
+                        if (smith.Latitud == matrix.GetLength(1) - 1)
+                        {
+                            smith.Latitud--;
+                            smith.Longitud--;
+                        }
+                        else
+                        {
+                            smith.Latitud++;
+                            smith.Longitud--;
+                        }
                     }
-                    else if (smith.Latitud < neo.Latitud && smith.Longitud <= neo.Longitud)
+                    else if (smith.Latitud < neo.Latitud && smith.Longitud == neo.Longitud)
                     {
-                        smith.Latitud++;
-                        smith.Longitud--;
+                        if (smith.Latitud == matrix.GetLength(0) - 1)
+                        {
+                            smith.Latitud++;
+                            smith.Longitud--;
+                        }
+                        else
+                        {
+                            smith.Latitud++;
+                            smith.Longitud++;
+                        }
                     }
-                    else if (smith.Latitud > neo.Latitud && smith.Longitud >= neo.Longitud)
+                    else if (smith.Latitud > neo.Latitud && smith.Longitud == neo.Longitud)
                     {
-                        smith.Latitud--;
-                        smith.Longitud++;
+                        if (smith.Latitud == matrix.GetLength(0) - 1)
+                        {
+                            smith.Latitud--;
+                            smith.Longitud--;
+                        }
+                        else
+                        {
+                            smith.Latitud--;
+                            smith.Longitud++;
+                        }
                     }
 
                     matrix[smith.Latitud, smith.Longitud] = smith;
