@@ -1,7 +1,7 @@
 ﻿
 using System.Resources;
 using Matrix;
-const int SIZE = 10;
+const int SIZE = 15;
 MatrixP matrix = MatrixFactory.CreateMatrix(SIZE);
 
 
