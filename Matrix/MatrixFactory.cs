@@ -17,7 +17,7 @@ namespace Matrix
 
             Personaje[,] matriz = new Personaje[tamano, tamano];
 
-            Generico[] genericos = GenericFactory.CreateAGeneric(matriz.Length / 2);
+            Generico[] genericos = GenericFactory.CreateAGeneric(matriz.Length / 3);
 
             Neo neo = NeoFactory.CreateNeo();
 
