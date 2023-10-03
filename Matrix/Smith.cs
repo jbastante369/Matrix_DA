@@ -126,9 +126,6 @@ namespace Matrix
                 } while (!Utilidades.smithCercaDeNeo(matrix));
                 
             }
-
-
-            Console.WriteLine(Math.Max(Math.Abs(latitud_Neo-latitud_Smith),Math.Abs(longitud_Neo-longitud_Smith)));
         }
 
         public override string ToString()

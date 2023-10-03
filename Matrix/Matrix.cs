@@ -16,38 +16,14 @@ namespace Matrix
             this.matrix = matrix;
         }
 
-        public void turnoGenerico()
+        public int turnoGenerico()
         {
-            Generico generico;
-
-            for (int i = 0; i < this.matrix.GetLength(0); i++)
-            {
-                for(int j = 0; j < this.matrix.GetLength(1); j++)
-                {
-                    if (this.matrix[i,j] is Generico)
-                    {
-                        generico = (Generico)this.matrix[i,j];
-                        
-                        if (generico.Prob_morir > 70)
-                        {
-                            generico = GenericFactory.CreateGeneric();
-                            generico.Latitud = i;
-                            generico.Longitud = j;
-                            this.matrix[i,j] = generico;
-                        }
-                        else
-                        {
-                            generico.Prob_morir += 10;
-                            this.matrix[i, j] = generico;
-                        }
-                    }
-                }
-            }
+            return Generico.matarGenericos(this.matrix);
         }
 
         public void turnoNeo()
         {
-            Neo.renacerPersonaje(this.matrix)
+            Neo.renacerPersonaje(this.matrix);
             Neo.moverNeo(this.matrix);
         }
 

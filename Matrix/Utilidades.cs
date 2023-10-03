@@ -20,11 +20,11 @@ namespace Matrix
                     }
                     if (matrix.matrix[i, j] is Neo)
                     {
-                        Console.Write("[ N ]");
+                        Console.Write("[[N]]");
                     }
                     if (matrix.matrix[i, j] is Smith)
                     {
-                        Console.Write("[ S ]");
+                        Console.Write("[[S]]");
                     }
                     if (matrix.matrix[i, j] is null)
                     {
